@@ -1,0 +1,133 @@
+JAVASCRIPT CHEAT SHEET
+
+BASICS -
+ 
+1) VARIABLES
+
+1) Var :- This variables can declared many times also can
+assigned or overwrite values many times.
+
+2) Let:- This variables cannot be declared many times but
+can assigned or overwrite values many times.
+
+3) Const:- This variables neither declared many times nor
+assigned or overwrite values many times.
+
+2) Different data types Different data types
+
+1) Char x = “riya”; 			<---------string----------->
+2) Char x = 20; 			<---------number----------->
+3) Char x = [“riya”,”mehere”]; 		<---------Array------------>
+4) Char x = true or false; 		<---------boolean---------->
+5) Char x = {first: “hello”, : “omega”}; <---------object----------->
+6) Char x = null; 			<---------null------------->
+7) Char x ; 				<---------undefined-------->
+
+3) Objects
+var student = {                 // object name
+firstName:"Jane",           // list of properties and values
+lastName:"Doe",
+age:18,
+height:170,
+fullName : function() {     // object function
+   return this.firstName + " " + this.lastName;
+}
+}; 
+
+4)LOOPS
+
+For Loop -
+
+for (var i = 0; i < 10; i++) {
+document.write(i + ": " + i*3 + "<br />");
+}
+var sum = 0;
+for (var i = 0; i < a.length; i++) {
+sum + = a[i];
+}               // parsing an array
+html = "";
+for (var i of custOrder) {
+html += "<li>" + i + "</li>";
+}
+
+While Loop -
+
+var i = 1;                      // initialize
+while (i < 100) {               // enters the cycle if statement is true
+i *= 2;                     // increment to avoid infinite loop
+document.write(i + ", ");   // output
+}
+
+5) Strings
+var abc = "abcdefghijklmnopqrstuvwxyz";
+var esc = 'I don\'t \n know';   // \n new line
+var len = abc.length;           // string length
+abc.indexOf("lmno");            // find substring, -1 if doesn't contain 
+abc.lastIndexOf("lmno");        // last occurance
+abc.slice(3, 6);                // cuts out "def", negative values count from behind
+abc.replace("abc","123");       // find and replace, takes regular expressions
+abc.toUpperCase();              // convert to upper case
+abc.toLowerCase();              // convert to lower case
+abc.concat(" ", str2);          // abc + " " + str2
+abc.charAt(2);                  // character at index: "c"
+abc[2];                         // unsafe, abc[2] = "C" doesn't work
+abc.charCodeAt(2);              // character code at index: "c" -> 99
+abc.split(",");                 // splitting a string on commas gives an array
+abc.split("");                  // splitting on characters
+128.toString(16);               // number to hex(16), octal 
+
+MATH
+Math.random();          // random number between 0 and 1
+Math.floor(Math.random() * 5) + 1;  // random integer, from 1 to 5
+
+6) Storing and retrieving from localStorage
+
+myObj = { "name":"Jane", "age":18, "city":"Chicago" };
+myJSON = JSON.stringify(myObj);                 // storing data
+localStorage.setItem("testJSON", myJSON);   
+text = localStorage.getItem("testJSON");        // retrieving data 
+obj = JSON.parse(text);
+document.write(obj.name);
+
+7)Errors
+
+try {                           // block of code to try
+undefinedFunction();
+}
+catch(err) {                    // block to handle errors
+console.log(err.message);
+}
+Throw error
+throw "My error message";
+
+8) If - Else
+
+if ((age >= 14) && (age < 19)) {        // logical condition
+status = "Eligible.";               // executed if condition is true
+} else {                                // else block is optional
+status = "Not eligible.";           // executed if condition is false
+}
+
+9) Switch Statement
+switch (new Date().getDay()) {      // input is current day
+case 6:                         // if (day == 6)
+	text = "Saturday";          
+	break;
+case 0:                         // if (day == 0)
+	text = "Sunday";
+	break;
+default:                        // else...
+	text = "Whatever";
+} 
+
+10)Arrays
+
+var dogs = ["Bulldog", "Beagle", "Labrador"]; 
+var dogs = new Array("Bulldog", "Beagle", "Labrador");  // declaration
+
+alert(dogs[1]);             // access value at index, first item being [0]
+dogs[0] = "Bull Terier";    // change the first item
+
+for (var i = 0; i < dogs.length; i++) {     // parsing with array.length
+console.log(dogs[i]);
+}

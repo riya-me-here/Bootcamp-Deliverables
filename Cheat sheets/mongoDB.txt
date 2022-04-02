@@ -1,0 +1,76 @@
+MONGO DB CHEAT SHEET
+
+1) Connect MongoDB Shell
+
+mongo # connects to mongodb://127.0.0.1:27017 by default
+mongo --host <host> --port <port> -u <user> -p <pwd> # omit the password if you want a prompt
+mongo "mongodb://192.168.1.1:27017"
+mongo "mongodb+srv://cluster-name.abcde.mongodb.net/<dbname>" --username <username> # MongoDB Atlas
+
+2) Show Databases
+show dbs
+db // prints the current database
+
+3) Switch Database
+use <database_name>
+
+4) Show Collections
+show collections
+
+5)CRUD OPERATIONS
+
+Create
+db.coll.insertOne({name: "Max"})
+db.coll.insert([{name: "Max"}, {name:"Alex"}]) // ordered bulk insert
+db.coll.insert([{name: "Max"}, {name:"Alex"}], {ordered: false}) // unordered bulk insert
+db.coll.insert({date: ISODate()})
+db.coll.insert({name: "Max"}, {"writeConcern": {"w": "majority", "wtimeout": 5000}})
+
+Read
+db.coll.findOne() // returns a single document
+db.coll.find()    // returns a cursor - show 20 results - "it" to display more
+db.coll.find().pretty()
+db.coll.find({name: "Max", age: 32}) // implicit logical "AND".
+db.coll.find({date: ISODate("2020-09-25T13:57:17.180Z")})
+db.coll.find({name: "Max", age: 32}).explain("executionStats") // or "queryPlanner" or "allPlansExecution"
+db.coll.distinct("name")
+// Count
+db.coll.count({age: 32})          // estimation based on collection metadata
+
+// Comparison
+db.coll.find({"year": {$gt: 1970}})
+db.coll.find({"year": {$gte: 1970}})
+db.coll.find({"year": {$lt: 1970}})
+db.coll.find({"year": {$lte: 1970}})
+$ne, $in, $nin
+
+Update
+db.coll.update({"_id": 1}, {"year": 2016}) // WARNING! Replaces the entire document
+db.coll.update({"_id": 1}, {$set: {"year": 2016, name: "Max"}})
+db.coll.update({"_id": 1}, {$unset: {"year": 1}})
+db.coll.update({"_id": 1}, {$rename: {"year": "date"} })
+db.coll.update({"_id": 1}, {$inc: {"year": 5}})
+db.coll.update({"_id": 1}, {$mul: {price: NumberDecimal("1.25"), qty: 2}})
+db.coll.update({"_id": 1}, {$min: {"imdb": 5}})
+db.coll.update({"_id": 1}, {$max: {"imdb": 8}})
+
+// Upsert
+db.coll.update({"_id": 1}, {$set: {item: "apple"}, $setOnInsert: {defaultQty: 100}}, {upsert: true})
+// Replace
+db.coll.replaceOne({"name": "Max"}, {"firstname": "Maxime", "surname": "Beugnet"})
+// Save
+db.coll.save({"item": "book", "qty": 40})
+
+Delete
+db.coll.remove({name: "Max"})
+db.coll.remove({name: "Max"}, {justOne: true})
+db.coll.remove({}) // WARNING! Deletes all the docs but not the collection itself and its index definitions
+db.coll.remove({name: "Max"}, {"writeConcern": {"w": "majority", "wtimeout": 5000}})
+db.coll.findOneAndDelete({"name": "Max"})
+
+Databases and Collections
+Drop
+db.coll.drop()    // removes the collection and its index definitions
+db.dropDatabase() // double check that you are *NOT* on the PROD cluster...
+
+

@@ -1,0 +1,81 @@
+CSS CHEAT SHEET
+
+1) Syntax
+selector{
+property: value;
+property2: value2;
+}
+
+2) Include external css file
+<link rel="stylesheet" type="text/css" href="/style.css" />
+
+3) Internal styles
+<style type="text/css">
+div { color: #444;}
+</style>
+
+4) Inline styles
+<tag style="property: value"> </tag>
+
+5) Selectors
+
+*  		all elements
+div 		all div tags
+div,p		all divs and paragraphs
+div p		paragraphs inside divs
+div > p		all p tags, one level deep in div
+.classname	all elements with class
+#idname		element with ID
+div.classname	divs with certain classname
+div#idname	div with certain ID
+#idname *	all elements inside #idname
+
+6) Properties
+align-content		behavior of the flex-wrap property
+align-items		alignment for items inside the container
+align-self		alignment for the selected item
+all			changes all properties
+backgroundall 		background properties in one declaration
+background-clip		painting area of the background
+background-color	background color
+background-image	background image
+background-origin	where the background image is positioned
+background-position	starting position of the background image
+background-repeat	the way the background image is repeated
+background-size		background image size
+
+
+flex-basis	initial length of a flexible item
+flex-direction	direction of the flexible items
+flex-wrap	wrap flexible items
+float		float elements left or right
+fontall 	font properties in one line
+font-size	font size
+font-stylefont style: normal, italic, oblique
+font-variantset small-caps
+font-weightuse bold or thin characters
+list-styleall 		list properties in one line
+list-style-image	replace the list item marker with an image
+list-style-position	list item markers inside or outside the content flow
+list-style-typeset 	the type of the list item marker
+margin			set the top, right, bottom and left margins in one line
+margin-bottom		bottom margin
+margin-left		left margin
+margin-right		right margin
+margin-top		margin top
+max-height		maximum height of element
+max-width		maximum width of element
+
+
+padding		padding between the element border and content
+padding-bottom	padding bottom
+padding-left	padding left
+padding-right	padding right
+padding-top	padding top
+
+text-align	horizontal alignment of text
+text-align-last	horizontal alignment of last line of text
+text-decorationoverline, underline or line-through the text
+text-indent	indentation of the first line of the text
+text-overflow	the way how overflowed content is marked (ellipsis)
+text-shadow	text shadow

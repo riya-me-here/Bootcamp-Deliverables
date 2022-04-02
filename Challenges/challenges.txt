@@ -1,0 +1,31 @@
+CHALLENGES
+
+1) In the starting, the course were going smooth like in Git I did not face any major challenge, only I faced issue with the ssh keys which I resolved myself.
+
+2) In the javascript course I faced some minor debugging challenges.
+
+3) In Html/css, this I feel I enjoyed the most to play around with the code and try and experiment things, challenge in this I feel is to remember the css properties,
+which will come with practice only, as we use the particular property more and more, it will get fixed in our mind and we'll understand where and when to use it.
+
+4) In React, in the first go I was not able to understand the concepts like react hooks properly, so I took my time and rewatched the videos, till I did'nt understand 
+them properly, also I was guided by ketan to make use of pen paper and draw flow charts from time to time to understand these concepts, which surely helped me.
+
+5) In node/express js, I was getting familiar with all the new terms and the installations etc, but till coming to the projects course I got used to it.
+
+6) In node/express project part, some installations and setup issues like in JWT and mongoDB were there, which I debugged and resolved.
+
+7) In the 15 projects react course, new hooks were introduced like useContext & useReducer, so I absorbed the concepts and with pratice, got familiar to it.
+
+8) In the mongoDB basics course, did not face any major challenge , only the course IDE interfcae was not working properly so I rather used MongoShell which turned out to be 
+more hand on and comfortable for me, so practised all the commands there only.
+
+10) In mongoDB for NodeJS, I faced problem in setting up the project, which I debugged, some ogf the tickets I was not able to write correctly, then refered the solution and
+took a note of them.
+
+11) In postgres also, practised all the commands, and got familair with the new one's like UUID.
+
+* OverAll challenges that I faced was to concentrate properly for these many hours and increase my sitting capacity, sometimes we get distracted, 
+  but inspite of that, perseverence was a challenge, which I think I have overcomed well, to finish the task on time. 
+* And continously pushing my limits to do as much as I can was a also a challenge.
+* This bootcamp also made me realise how tremendous amount of new things can be learnt in such a small time i.e 1.5 month, if we decide not to procastinate.
+* I feel like this is one of the milestone reached and looking forward for tougher milestones, because going through this will only make me shine. 

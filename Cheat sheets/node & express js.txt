@@ -1,0 +1,108 @@
+NODE AND EXPRESS JS
+
+NODE
+
+1) Module 
+fs -> The “file system” module with various functions to process data in the file system.
+path -> Provides functions to process path strings.
+util -> Provides various “utility” functions, such as util.promisify.
+
+2) exec
+var exec = require('child_process').exec,
+
+EXPRESS
+
+1) The express object -> express 
+Top-level object. When the express() method is called it returns an
+express application object. You need this application object to
+make use of all other Express.js features.
+
+2) The express app object -> app 
+The app object is the most important object provided by the
+Express framework. It has a number of useful methods:
+• app.use
+• app.get
+• app.post
+• app.delete
+• app.put
+• app.listen
+
+->
+1) The use method of the app object
+app.use() 
+The Express application will invoke the callback function without
+regard to the path or method (POST or GET) of the incoming
+request.
+Basic syntax:
+app.use(function(req,res,next){
+//code goes here
+});
+
+2) The GET method of the app object -> app.get() 
+Trap and manage an HTTP GET event.
+The get() method takes a path as an argument, and also a callback
+function. The callback function provides a request and a response
+object.
+
+The path can be ‘/’ which would mean no path.
+The path can be ‘/xyz would trap an HTTP GET targeted at xyz. The
+value ‘xyz’ is virtual. It does not correspond to a folder on the
+servier’s file system.
+
+Basic syntax:
+app.get('/xyz',function(req,res){
+//code goes here
+});
+
+3) The POST method of the app object -> app.post() 
+Trap and manage an HTTP POST event. Similar to app.get.
+
+4) The DELETE method of the app object ->app.delete() 
+Trap and manage an HTTP DELETE event. Similar to app.get.
+
+5) The PUT method of the app object -> app.put() 
+Trap and manage an HTTP PUT event. Similar to app.get.
+
+6) The listen method of the app object -> app.listen() 
+This method defines the port that the express app object will listen
+on. The callback function executes when the app has been started.
+The method returns an object that summarizes the properties of
+the server.
+//here XXXX is the port number
+app.listen(XXXX,function(){
+});
+
+7) The express request object -> req 
+All of the app callback functions provide a request object. The
+variable “req” is short for “request”. It represents the data sent to
+the API endpoint. The Express framework (which includes bodyparser) improves and simplifies the request object provided by
+Node.js alone.
+
+The request object will have query and body child objects, which in
+turn have properties that correspond to the data sent via GET and
+POST.
+
+For example:
+req.query.x // refers to a query
+// string parameter x
+req.body.y // refers to a form tag
+// with the name of y
+
+8) The express response object -> res
+
+The response object will have the following methods:
+• header()
+• writeHead()
+• write()
+• end()
+
+9) The write method of the response object -> res.write() 
+Write a stream of text to the HTTP response.
+
+10) The end method of the response object -> res.end() 
+End the HTTP response.
+
+11) The express next object -> next() 
+The app callback functions may also provide a next object. When
+the next() method is called the next matching express app event
+will be called.
